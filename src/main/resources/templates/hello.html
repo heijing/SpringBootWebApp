@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+	  <title>Spring Boot - AJAX POST GET Example</title>
+	  <meta charset="utf-8"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="/js/postrequest.js"></script>
+      <script src="/js/getrequest.js"></script>
+	  <script src = "/js/deleterequest.js"></script>
+	  
+</head>
+<body>
+ 
+<div class="container">
+ 
+	<h3 style="color:blue">CRUD customer Interface</h3>
+	<h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
+	
+	<div>
+		<form class="form-inline" style="margin:20px 20px 20px 20px" id="customerForm">
+			<div class="form-group">
+				<label for="firstname" style="margin-right:5px">FirstName:</label>
+				<input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" required="required"/>
+			</div>
+			<div class="form-group">
+				<label for="lastname" style="margin-left:20px; margin-right:5px">LastName:</label>
+				<input type="text" class="form-control" id="lastname" placeholder="Enter LastName" required="required"/>
+			</div>
+			<button type="submit" class="btn btn-default" style="margin-left:20px; margin-right:5px">Submit</button>
+		</form>
+	</div>
+	
+	<div id="postResultDiv">
+	</div>
+
+
+	<div style="margin:20px 20px 20px 20px">
+		<button id="getAllCustomerId" type="button" class="btn btn-primary">Get All Customers</button>
+		<div id="getResultDiv" style="padding:20px 10px 20px 50px">
+	        <ul class="list-group">
+	    	</ul>
+    	</div>
+	</div>
+
+	<div>
+		<form class="form-inline" style="margin:20px 20px 20px 20px" id="deleteForm">
+			<div class="form-group">
+				<label for="id" style="margin-right:5px">ID:</label>
+				<input type="text" id="id" placeholder="Enter ID" required = "required"/>
+			</div>
+			<button type="submit" class="btn btn-default" style="margin-left:20px; margin-right:5px">Delete</button>
+		</form>
+	</div>
+	<div id="deleteResultDiv"> </div>
+
+	<div style="margin:20px 20px 20px 20px">
+		<form class="form-inline" th:action="@{/logout}" method="post">
+			<input class="submitButton" type="submit" value="Sign Out"/>
+		</form>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>
