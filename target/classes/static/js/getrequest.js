@@ -13,6 +13,9 @@ $( document ).ready(function() {
 			url : "/api/customer/all",
 			success: function(result){
 				if(result.status == "Done"){
+					if(result.data.length == 0){
+						$('#getResultDiv').html("<strong style='margin:20px 20px 20px 20px'>There are no customers</strong>")
+					}
 					$('#getResultDiv ul').empty();
 					var custList = "";
 					$.each(result.data, function(i, customer){

@@ -2,6 +2,8 @@ FROM frolvlad/alpine-oraclejdk8:slim
 MAINTAINER Danyang Li <danyang.li@mmodal.com>
 VOLUME /tmp
 
+EXPOSE 8080
+
 # The application goes here, this is the working directory
 RUN mkdir /SpringBootJQueryAjaxClient
 RUN chmod 750 /SpringBootJQueryAjaxClient

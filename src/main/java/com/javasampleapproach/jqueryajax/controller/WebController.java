@@ -12,6 +12,11 @@ public class WebController {
         return "index";
     }
 
+    @GetMapping(value="/index")
+    public String index(){
+        return "index";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
